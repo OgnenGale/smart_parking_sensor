@@ -657,6 +657,10 @@ def export():
                          ("pcb_assembly", "F.Fab,F.SilkS,F.CrtYd,Edge.Cuts")):
         cli("pcb", "export", "svg", "-l", layers, "--mode-single", "--exclude-drawing-sheet",
             "--fit-page-to-board", "-o", f"diagrams/{name}.svg", pcb)
+    # 1:1 paper template for test-fitting the real parts (print at 100% / "Actual size")
+    cli("pcb", "export", "pdf", "-l", "F.Cu,F.SilkS,F.Fab,Edge.Cuts", "--mode-single", "--scale", "1",
+        "--black-and-white", "--drill-shape-opt", "2", "--exclude-value",
+        "-o", "diagrams/print_1to1_top.pdf", pcb)
     cli("pcb", "render", "--side", "top", "-w", "1600", "-h", "1200", "-o", "diagrams/render_top.png", pcb)
     cli("pcb", "render", "--side", "bottom", "-w", "1600", "-h", "1200", "-o", "diagrams/render_bottom.png", pcb)
     cli("pcb", "export", "gerbers", "-l", "F.Cu,B.Cu,F.SilkS,B.SilkS,F.Mask,B.Mask,F.Paste,Edge.Cuts",
