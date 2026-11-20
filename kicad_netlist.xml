@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\ognen\OneDrive\Desktop\KICAD\pcb_design\parking_sensor.kicad_sch</source>
-    <date>2026-11-20T15:18:50</date>
+    <date>2026-11-20T15:40:25</date>
     <tool>Eeschema 10.0.8</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -34,7 +34,7 @@
         <field name="Description">ADC filter</field>
       </fields>
       <libsource lib="parking_sensor" part="C" description="ADC filter"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>77932c87-9a18-5bd9-86cf-3f4da0fcd1e4</tstamps>
@@ -57,7 +57,7 @@
         <field name="Description">Bulk cap at ESP32 5V pin, rides through Wi-Fi bursts</field>
       </fields>
       <libsource lib="parking_sensor" part="C" description="ADC filter"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>891d1384-e36b-507c-9025-2d64c213c856</tstamps>
@@ -80,7 +80,7 @@
         <field name="Description">Status LED</field>
       </fields>
       <libsource lib="parking_sensor" part="LED" description="Status LED"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>7c83c2e0-0621-555d-9eef-8bd781041295</tstamps>
@@ -103,7 +103,7 @@
         <field name="Description">Battery connector, JST-PH 2.0mm right-angle</field>
       </fields>
       <libsource lib="parking_sensor" part="Conn_Pwr_2" description="Battery connector, JST-PH 2.0mm right-angle"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>e7fdbc9a-92e0-53dd-aef6-f4fe63234156</tstamps>
@@ -126,7 +126,7 @@
         <field name="Description">Solar panel input, JST-XH 2.5mm vertical</field>
       </fields>
       <libsource lib="parking_sensor" part="Conn_Pwr_2" description="Battery connector, JST-PH 2.0mm right-angle"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a9431263-c25f-5fdc-9b19-8a470ccdc3c7</tstamps>
@@ -149,7 +149,7 @@
         <field name="Description">Battery divider top (100k: ~21uA drain)</field>
       </fields>
       <libsource lib="parking_sensor" part="R" description="Battery divider top (100k: ~21uA drain)"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>52933be4-fbfa-584b-a638-58e6b3f5db67</tstamps>
@@ -172,7 +172,7 @@
         <field name="Description">Battery divider bottom (100k: ~21uA drain)</field>
       </fields>
       <libsource lib="parking_sensor" part="R" description="Battery divider top (100k: ~21uA drain)"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>def5e12d-3a77-555b-95b4-25bf9d8d8d0c</tstamps>
@@ -195,7 +195,7 @@
         <field name="Description">LED current limit</field>
       </fields>
       <libsource lib="parking_sensor" part="R" description="Battery divider top (100k: ~21uA drain)"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>e10a3d0b-794f-5c5f-8174-cc5b6d979e23</tstamps>
@@ -218,7 +218,7 @@
         <field name="Description">SPDT slide switch, power disconnect</field>
       </fields>
       <libsource lib="parking_sensor" part="SW_SPDT" description="SPDT slide switch, power disconnect"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>695c9b4d-d771-5ea5-b227-e28c33e5fd18</tstamps>
@@ -242,7 +242,7 @@
         <field name="Description">ESP32-C3 SuperMini dev board on 2x 1x8 2.54mm female headers</field>
       </fields>
       <libsource lib="parking_sensor" part="ESP32C3_SuperMini" description="ESP32-C3 SuperMini dev board on 2x 1x8 2.54mm female headers"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>fa777994-b938-513b-966f-aa0aa479ed28</tstamps>
@@ -279,7 +279,7 @@
         <field name="Description">TP4056 1S Li-ion charger module with DW01A + FS8205A protection</field>
       </fields>
       <libsource lib="parking_sensor" part="TP4056_Module" description="TP4056 1S Li-ion charger module with DW01A + FS8205A protection"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a9f0c802-2b30-55e9-a082-4684a2d30e1d</tstamps>
@@ -306,7 +306,7 @@
         <field name="Description">GY-271 3-axis magnetometer module, 1x5 2.54mm header</field>
       </fields>
       <libsource lib="parking_sensor" part="GY-271" description="GY-271 3-axis magnetometer module, 1x5 2.54mm header"/>
-      <property name="Sheetname" value="Root"/>
+      <property name="Sheetname" value="parking_sensor"/>
       <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>804b2d7a-ae28-5104-b96c-2bd841c1f7d8</tstamps>

@@ -417,9 +417,12 @@ def write_pcb():
                 nets[net] = pcbnew.NETINFO_ITEM(board, net)
                 board.Add(nets[net])
             fp.FindPadByNumber(num).SetNet(nets[net])
+        fp.Value().SetVisible(False)            # value is in the BOM; on the board it was just clutter
         ref = fp.Reference()
         if p["ref"] in ("R1", "R2", "C1", "C2"):      # under the ESP32 module: label on Fab only
             ref.SetLayer(pcbnew.F_Fab)
+            ref.SetTextSize(pcbnew.VECTOR2I(pcbnew.FromMM(0.6), pcbnew.FromMM(0.6)))
+            ref.SetTextThickness(pcbnew.FromMM(0.09))
         elif p["ref"] in ("J1", "J2", "SW1"):   # labelled by board text instead
             ref.SetVisible(False)
         elif p["ref"] == "U2":                  # default spot collides with J2
@@ -445,6 +448,7 @@ def write_pcb():
         board.Add(h)
         h.SetReference(f"H{i + 1}")
         h.SetValue("M3")
+        h.Value().SetVisible(False)
         h.SetPosition(mm(hx, hy))
         h.Reference().SetVisible(False)
         h.SetBoardOnly(True)
@@ -537,7 +541,6 @@ def write_pcb():
     text("J2 SOLAR", 19.5, 1.6, 0.8)
     text("J1 BATT", 4.6, 37.6, 0.8)
     text("SW1 PWR", 18.4, 39.6, 0.8)
-    text("MAG KEEP-OUT (both layers)", 51.5, 13.5, 0.6, pcbnew.F_Fab)
 
     pcbnew.ZONE_FILLER(board).Fill(board.Zones())
     pcbnew.SaveBoard(os.path.join(HERE, f"{NAME}.kicad_pcb"), board)
