@@ -1,5 +1,6 @@
 # IoT Smart Parking Sensor — PCB v1.0
-nSmart parking sensor for my university project.
+
+Smart parking sensor for my university project.
 
 2-layer board, **62 × 46 mm**, four M3 holes (3.2 mm, NPTH) 3.5 mm in from each corner.
 Everything here is produced by `generate.py`, which writes all the files and then checks them:
