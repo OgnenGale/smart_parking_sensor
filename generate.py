@@ -38,11 +38,12 @@ ROOT_UUID = uid("root")
 # --- Board geometry (mm, origin = top-left board corner, +y = down) ----------
 BOARD_W, BOARD_H = 62.0, 46.0
 OX, OY = 100.0, 50.0          # where the board sits on the KiCad page
-ROW_SPACING = 16.5            # SuperMini rows, estimated from photos (2.54 pitch as scale). MEASURE (README).
+ROW_SPACING = 15.7            # SuperMini rows, centre to centre: ruler 15.0 inner gap + 0.66 pin width
 U1_X = 33.65                  # module centre; left row stays clear of SW1
 UL = U1_X - ROW_SPACING / 2   # left header row x
-TP_PX = 7.3                   # TP4056 (HW-373) outer pads at +-7.3 mm, B+/B- at +-3.8 mm (from photos)
-TP_BX = 3.8
+TP_PX = 6.9                   # TP4056 (HW-373) outer pads +-6.9, B+/B- +-3.6 (photos rescaled to the measured 15.7 mm ESP32 rows)
+TP_BX = 3.6
+TP_ROWS = 22.8               # IN row to OUT/B row: fitted 24.0 on a print that came out at 95.4% (59x44 instead of 62x46)
 PWR, SIG = 0.6, 0.25          # track widths
 POWER_NETS = ["SOLAR_P", "SOLAR_N", "BAT_P", "BAT_N", "VOUT", "VSYS", "+3V3", "GND"]
 
@@ -100,7 +101,7 @@ PARTS = [
          fp="Resistor_SMD:R_0805_2012Metric",
          desc="Battery divider top (100k: ~21uA drain)", bom="100k 1% 0805",
          pins=[("1", "~", "VSYS", "L"), ("2", "~", "VBAT_SENSE", "R")],
-         sch=(53.34, 119.38), pcb=(28.0, 40.0, 90)),
+         sch=(53.34, 119.38), pcb=(28.4, 40.0, 90)),
     dict(ref="R2", value="100k 1%", sym="R", w=5.08,
          fp="Resistor_SMD:R_0805_2012Metric",
          desc="Battery divider bottom (100k: ~21uA drain)", bom="100k 1% 0805",
@@ -146,11 +147,11 @@ ROUTES = [
     ("BAT_N", F, PWR, [("U2", "4"), (11.0 - TP_BX, 41.6), (12.0, 41.6), ("J1", "2")]),
     ("VOUT", F, PWR, [("U2", "5"), (11.0 + TP_PX, 36.5), (21.68, 36.5), ("SW1", "1")]),
     ("VSYS", F, PWR, [("SW1", "2"), (19.14, 44.6), (UL, 44.6), ("U1", "8")]),
-    ("VSYS", F, PWR, [("U1", "8"), (28.0, 43.64), ("R1", "1")]),
-    ("VSYS", F, PWR, [(28.0, 43.64), ("C2", "1")]),
+    ("VSYS", F, PWR, [("U1", "8"), (28.4, 43.64), ("R1", "1")]),
+    ("VSYS", F, PWR, [(28.4, 43.64), ("C2", "1")]),
     ("+3V3", F, PWR, [("U1", "6"), (22.9, 38.56), (22.9, 12.0), (44.0, 12.0), (44.0, 21.0), ("U3", "1")]),
-    ("VBAT_SENSE", F, SIG, [("R1", "2"), (28.0, 25.86), ("U1", "1")]),
-    ("VBAT_SENSE", F, SIG, [(28.0, 34.0), (30.5, 34.0), ("R2", "1")]),
+    ("VBAT_SENSE", F, SIG, [("R1", "2"), (28.4, 25.86), ("U1", "1")]),
+    ("VBAT_SENSE", F, SIG, [(28.4, 34.0), (30.5, 34.0), ("R2", "1")]),
     ("VBAT_SENSE", F, SIG, [(30.5, 34.0), (33.0, 34.0), ("C1", "1")]),
     ("LED_DRV", B, SIG, [("U1", "2"), (35.0, 28.4)]),
     ("LED_DRV", F, SIG, [(35.0, 28.4), (35.0, 42.37), ("R3", "1")]),
@@ -205,8 +206,10 @@ def write_footprints():
     # the module sits ~8.5 mm up on sockets, so the 0805 parts fit underneath.
     hx = ROW_SPACING / 2
     ys = [-8.89 + 2.54 * k for k in range(8)]
-    b = _rect("F.Fab", -9, -11.25, 9, 11.25, 0.1) + _rect("F.Fab", -4.5, 7.9, 4.5, 11.25, 0.1)
-    b += _txt("F.Fab", "USB-C", 0, 9.6, 0.8) + _txt("F.Fab", "ANTENNA", 0, -10.2, 0.8)
+    # Real board 18 x 22.5 mm, pins NOT centred: ~1.5 mm antenna edge -> pin 1 centre, the rest at the USB end.
+    top, bot = -8.89 - 1.5, -8.89 - 1.5 + 22.5
+    b = _rect("F.Fab", -9, top, 9, bot, 0.1) + _rect("F.Fab", -4.5, 6.0, 4.5, bot + 1.3, 0.1)  # USB-C sticks out 1.3
+    b += _txt("F.Fab", "USB-C", 0, 11.0, 0.8) + _txt("F.Fab", "ANTENNA", 0, -9.6, 0.8)
     for x in (-hx, hx):
         b += _rect("F.SilkS", x - 1.4, -10.3, x + 1.4, 10.3, 0.12)
         b += _rect("F.CrtYd", x - 1.52, -10.42, x + 1.52, 10.42, 0.05)
@@ -222,11 +225,12 @@ def write_footprints():
         -12.2, 12.2, b)
 
     # TP4056 module (28 x 17 mm), IN end toward -y. Pad positions: verify on your module.
-    tp = {"1": (TP_PX, -12.5, "IN+"), "2": (-TP_PX, -12.5, "IN-"), "6": (-TP_PX, 12.5, "OUT-"),
+    tp = {"1": (TP_PX, 12.5 - TP_ROWS, "IN+"), "2": (-TP_PX, 12.5 - TP_ROWS, "IN-"), "6": (-TP_PX, 12.5, "OUT-"),
           "4": (-TP_BX, 12.5, "B-"), "3": (TP_BX, 12.5, "B+"), "5": (TP_PX, 12.5, "OUT+")}
     b = _rect("F.SilkS", -8.75, -14, 8.75, 14, 0.12) + _rect("F.Fab", -8.75, -14, 8.75, 14, 0.1)
     b += _rect("F.CrtYd", -9.0, -14.25, 9.0, 14.25, 0.05)
     b += _txt("F.SilkS", "TP4056", 0, 0, 1.0)
+    b += _txt("F.SilkS", "USB-C THIS END", 0, -12.5, 0.8)  # module goes in USB-up; easy to fit upside down
     for num, (x, y, lab) in tp.items():
         b += _pad(num, x, y, 2.0, 1.0, square=(num == "1"))
         b += _txt("F.SilkS", lab, x * 0.85 if abs(x) > 3 else x, y - 2.4 if y > 0 else y + 2.4, 0.8)

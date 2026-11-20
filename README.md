@@ -15,9 +15,9 @@ Results of the last run: **ERC 0 issues, DRC 0 issues (zones refilled, schematic
 
 | # | Item | What I did / what you must check |
 |---|------|----------------------------------|
-| 1 | **SuperMini row spacing** | Estimated from your photos as **16.5 mm**, using the 2.54 mm pin pitch as the scale. The spec's 17.78 mm and my first guess of 15.24 mm are both wrong. **Measure hole centre to hole centre across the board with calipers** and set `ROW_SPACING` in `generate.py`. |
+| 1 | **SuperMini row spacing** | Measured with a ruler: 15.0 mm gap between pins + 0.66 mm pin width = **15.7 mm** centre to centre (`ROW_SPACING`). Pin pitch confirmed 2.54 mm (pin 1 to pin 5: 9.5 mm gap). Confirm on the 1:1 print before ordering. |
 | 2 | SuperMini pin order | Confirmed from your photos: with USB-C at the bottom (top view), the left column top→bottom is `GPIO0 … GPIO4, 3V3, GND, 5V`. |
-| 3 | **TP4056 (HW-373 V1.2.1) pads** | Order confirmed from your photos: `IN-`/`IN+` at the USB end (IN+ on the right), and `OUT-, B-, B+, OUT+` across the other end. Spacing estimated from the photos: outer pads ±7.3 mm, B± at ±3.8 mm. Check with calipers (`TP_PX`, `TP_BX`). |
+| 3 | **TP4056 (HW-373 V1.2.1) pads** | Order confirmed from your photos: `IN-`/`IN+` at the USB end (IN+ on the right), and `OUT-, B-, B+, OUT+` across the other end. Outer pads ±6.9 mm, B± at ±3.6 mm (`TP_PX`, `TP_BX`); IN row to OUT/B row **22.8 mm** (`TP_ROWS`). The first test print came out at 95.4% (59 × 44 mm), so these are corrected for that. **Print the template at 100% / Actual size and check the outline is 62 × 46 mm.** Fit it **USB-C toward J2** (marked on the silkscreen). |
 | 4 | **SS-12D00G3 pitch** | Assumed 2.54 mm. Some clones use 2.0 mm, so check yours. |
 | 5 | **Board size** | 50 × 40 mm doesn't fit the three modules, both keep-outs and four corner M3 holes without courtyard collisions, so the board is 62 × 46 mm. |
 | 6 | ⚠ **USB while switched on** | The SuperMini `5V` pin is the USB VBUS line. With SW1 ON it connects through the protection MOSFETs straight to the battery, so a USB cable charges the LiPo directly with no current limit. **Turn SW1 OFF before connecting USB**; the silkscreen says so too. |
