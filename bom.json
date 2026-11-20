@@ -1,0 +1,93 @@
+[
+  {
+    "refs": "U1",
+    "qty": 1,
+    "value": "ESP32-C3 SuperMini",
+    "footprint": "parking_sensor:ESP32-C3_SuperMini_Socketed",
+    "part": "ESP32-C3 SuperMini + 2x 1x8 female header 2.54mm"
+  },
+  {
+    "refs": "U2",
+    "qty": 1,
+    "value": "TP4056 + DW01A/FS8205A",
+    "footprint": "parking_sensor:TP4056_Module_Protected",
+    "part": "TP4056 charger module with protection (USB-C or micro-USB)"
+  },
+  {
+    "refs": "U3",
+    "qty": 1,
+    "value": "GY-271 (QMC5883L/HMC5883L)",
+    "footprint": "parking_sensor:GY-271_Module",
+    "part": "GY-271 magnetometer module + 1x5 female header 2.54mm"
+  },
+  {
+    "refs": "J1",
+    "qty": 1,
+    "value": "LiPo 3.7V 450mAh",
+    "footprint": "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal",
+    "part": "JST PH S2B-PH-K-S right-angle 2-pin"
+  },
+  {
+    "refs": "J2",
+    "qty": 1,
+    "value": "Solar 5-6V",
+    "footprint": "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical",
+    "part": "JST XH B2B-XH-A vertical 2-pin"
+  },
+  {
+    "refs": "SW1",
+    "qty": 1,
+    "value": "SS-12D00G3",
+    "footprint": "parking_sensor:SW_Slide_SPDT_SS-12D00G3",
+    "part": "SS-12D00G3 SPDT slide switch"
+  },
+  {
+    "refs": "R1,R2",
+    "qty": 2,
+    "value": "100k 1%",
+    "footprint": "Resistor_SMD:R_0805_2012Metric",
+    "part": "100k 1% 0805"
+  },
+  {
+    "refs": "C1",
+    "qty": 1,
+    "value": "100nF",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "part": "100nF X7R 0805 ceramic"
+  },
+  {
+    "refs": "C2",
+    "qty": 1,
+    "value": "100uF 6.3V",
+    "footprint": "Capacitor_SMD:C_1210_3225Metric",
+    "part": "100uF 6.3V X5R 1210 ceramic (e.g. Murata GRM32ER60J107)"
+  },
+  {
+    "refs": "R3",
+    "qty": 1,
+    "value": "220R",
+    "footprint": "Resistor_SMD:R_0805_2012Metric",
+    "part": "220R 0805"
+  },
+  {
+    "refs": "D1",
+    "qty": 1,
+    "value": "LED 3mm green",
+    "footprint": "LED_THT:LED_D3.0mm",
+    "part": "3mm LED green/blue"
+  },
+  {
+    "refs": "U2 rework",
+    "qty": 1,
+    "value": "3.0k 1%",
+    "footprint": "0603 (on the TP4056 module)",
+    "part": "Replaces the module R_PROG 1.2k -> 400 mA charge current"
+  },
+  {
+    "refs": "H1-H4",
+    "qty": 4,
+    "value": "M3",
+    "footprint": "MountingHole:MountingHole_3.2mm_M3",
+    "part": "M3 screw/standoff (hole only, nothing to solder)"
+  }
+]

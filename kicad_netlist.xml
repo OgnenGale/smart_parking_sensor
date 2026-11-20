@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\ognen\OneDrive\Desktop\KICAD\pcb_design\parking_sensor.kicad_sch</source>
+    <date>2026-11-20T15:18:50</date>
+    <tool>Eeschema 10.0.8</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>IoT Smart Parking Sensor</title>
+        <company/>
+        <rev>1.0</rev>
+        <date>2026-11-20</date>
+        <source>parking_sensor.kicad_sch</source>
+        <comment number="1" value="ESP32-C3 SuperMini + GY-271 + TP4056, solar/LiPo powered"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <description>ADC filter</description>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">ADC filter</field>
+      </fields>
+      <libsource lib="parking_sensor" part="C" description="ADC filter"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>77932c87-9a18-5bd9-86cf-3f4da0fcd1e4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>100uF 6.3V</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <description>Bulk cap at ESP32 5V pin, rides through Wi-Fi bursts</description>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_1210_3225Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Bulk cap at ESP32 5V pin, rides through Wi-Fi bursts</field>
+      </fields>
+      <libsource lib="parking_sensor" part="C" description="ADC filter"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>891d1384-e36b-507c-9025-2d64c213c856</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D1">
+      <value>LED 3mm green</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <description>Status LED</description>
+      <fields>
+        <field name="Footprint">LED_THT:LED_D3.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description">Status LED</field>
+      </fields>
+      <libsource lib="parking_sensor" part="LED" description="Status LED"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7c83c2e0-0621-555d-9eef-8bd781041295</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J1">
+      <value>LiPo 3.7V 450mAh</value>
+      <footprint>Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal</footprint>
+      <description>Battery connector, JST-PH 2.0mm right-angle</description>
+      <fields>
+        <field name="Footprint">Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description">Battery connector, JST-PH 2.0mm right-angle</field>
+      </fields>
+      <libsource lib="parking_sensor" part="Conn_Pwr_2" description="Battery connector, JST-PH 2.0mm right-angle"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e7fdbc9a-92e0-53dd-aef6-f4fe63234156</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J2">
+      <value>Solar 5-6V</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <description>Solar panel input, JST-XH 2.5mm vertical</description>
+      <fields>
+        <field name="Footprint">Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description">Solar panel input, JST-XH 2.5mm vertical</field>
+      </fields>
+      <libsource lib="parking_sensor" part="Conn_Pwr_2" description="Battery connector, JST-PH 2.0mm right-angle"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a9431263-c25f-5fdc-9b19-8a470ccdc3c7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>100k 1%</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <description>Battery divider top (100k: ~21uA drain)</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Battery divider top (100k: ~21uA drain)</field>
+      </fields>
+      <libsource lib="parking_sensor" part="R" description="Battery divider top (100k: ~21uA drain)"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>52933be4-fbfa-584b-a638-58e6b3f5db67</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>100k 1%</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <description>Battery divider bottom (100k: ~21uA drain)</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Battery divider bottom (100k: ~21uA drain)</field>
+      </fields>
+      <libsource lib="parking_sensor" part="R" description="Battery divider top (100k: ~21uA drain)"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>def5e12d-3a77-555b-95b4-25bf9d8d8d0c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>220R</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <description>LED current limit</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">LED current limit</field>
+      </fields>
+      <libsource lib="parking_sensor" part="R" description="Battery divider top (100k: ~21uA drain)"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e10a3d0b-794f-5c5f-8174-cc5b6d979e23</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW1">
+      <value>SS-12D00G3</value>
+      <footprint>parking_sensor:SW_Slide_SPDT_SS-12D00G3</footprint>
+      <description>SPDT slide switch, power disconnect</description>
+      <fields>
+        <field name="Footprint">parking_sensor:SW_Slide_SPDT_SS-12D00G3</field>
+        <field name="Datasheet"/>
+        <field name="Description">SPDT slide switch, power disconnect</field>
+      </fields>
+      <libsource lib="parking_sensor" part="SW_SPDT" description="SPDT slide switch, power disconnect"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>695c9b4d-d771-5ea5-b227-e28c33e5fd18</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>ESP32-C3 SuperMini</value>
+      <footprint>parking_sensor:ESP32-C3_SuperMini_Socketed</footprint>
+      <description>ESP32-C3 SuperMini dev board on 2x 1x8 2.54mm female headers</description>
+      <fields>
+        <field name="Footprint">parking_sensor:ESP32-C3_SuperMini_Socketed</field>
+        <field name="Datasheet"/>
+        <field name="Description">ESP32-C3 SuperMini dev board on 2x 1x8 2.54mm female headers</field>
+      </fields>
+      <libsource lib="parking_sensor" part="ESP32C3_SuperMini" description="ESP32-C3 SuperMini dev board on 2x 1x8 2.54mm female headers"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fa777994-b938-513b-966f-aa0aa479ed28</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="16"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U2">
+      <value>TP4056 + DW01A/FS8205A</value>
+      <footprint>parking_sensor:TP4056_Module_Protected</footprint>
+      <description>TP4056 1S Li-ion charger module with DW01A + FS8205A protection</description>
+      <fields>
+        <field name="Footprint">parking_sensor:TP4056_Module_Protected</field>
+        <field name="Datasheet"/>
+        <field name="Description">TP4056 1S Li-ion charger module with DW01A + FS8205A protection</field>
+      </fields>
+      <libsource lib="parking_sensor" part="TP4056_Module" description="TP4056 1S Li-ion charger module with DW01A + FS8205A protection"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a9f0c802-2b30-55e9-a082-4684a2d30e1d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U3">
+      <value>GY-271 (QMC5883L/HMC5883L)</value>
+      <footprint>parking_sensor:GY-271_Module</footprint>
+      <description>GY-271 3-axis magnetometer module, 1x5 2.54mm header</description>
+      <fields>
+        <field name="Footprint">parking_sensor:GY-271_Module</field>
+        <field name="Datasheet"/>
+        <field name="Description">GY-271 3-axis magnetometer module, 1x5 2.54mm header</field>
+      </fields>
+      <libsource lib="parking_sensor" part="GY-271" description="GY-271 3-axis magnetometer module, 1x5 2.54mm header"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="parking_sensor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>804b2d7a-ae28-5104-b96c-2bd841c1f7d8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="parking_sensor" part="C">
+      <description>ADC filter</description>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">ADC filter</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="parking_sensor" part="Conn_Pwr_2">
+      <description>Battery connector, JST-PH 2.0mm right-angle</description>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_Pwr_2</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Battery connector, JST-PH 2.0mm right-angle</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="parking_sensor" part="ESP32C3_SuperMini">
+      <description>ESP32-C3 SuperMini dev board on 2x 1x8 2.54mm female headers</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESP32C3_SuperMini</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">ESP32-C3 SuperMini dev board on 2x 1x8 2.54mm female headers</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GPIO0" type="passive"/>
+        <pin num="2" name="GPIO1" type="passive"/>
+        <pin num="3" name="GPIO2" type="passive"/>
+        <pin num="4" name="GPIO3" type="passive"/>
+        <pin num="5" name="GPIO4" type="passive"/>
+        <pin num="6" name="3V3" type="passive"/>
+        <pin num="7" name="GND" type="passive"/>
+        <pin num="8" name="5V" type="passive"/>
+        <pin num="9" name="GPIO21" type="passive"/>
+        <pin num="10" name="GPIO20" type="passive"/>
+        <pin num="11" name="GPIO10" type="passive"/>
+        <pin num="12" name="GPIO9" type="passive"/>
+        <pin num="13" name="GPIO8" type="passive"/>
+        <pin num="14" name="GPIO7" type="passive"/>
+        <pin num="15" name="GPIO6" type="passive"/>
+        <pin num="16" name="GPIO5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="parking_sensor" part="GY-271">
+      <description>GY-271 3-axis magnetometer module, 1x5 2.54mm header</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">GY-271</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">GY-271 3-axis magnetometer module, 1x5 2.54mm header</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="SCL" type="passive"/>
+        <pin num="4" name="SDA" type="passive"/>
+        <pin num="5" name="DRDY" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="parking_sensor" part="LED">
+      <description>Status LED</description>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Status LED</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="parking_sensor" part="R">
+      <description>Battery divider top (100k: ~21uA drain)</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Battery divider top (100k: ~21uA drain)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="parking_sensor" part="SW_SPDT">
+      <description>SPDT slide switch, power disconnect</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_SPDT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">SPDT slide switch, power disconnect</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="C" type="passive"/>
+        <pin num="3" name="B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="parking_sensor" part="TP4056_Module">
+      <description>TP4056 1S Li-ion charger module with DW01A + FS8205A protection</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TP4056_Module</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">TP4056 1S Li-ion charger module with DW01A + FS8205A protection</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN+" type="passive"/>
+        <pin num="2" name="IN-" type="passive"/>
+        <pin num="3" name="B+" type="passive"/>
+        <pin num="4" name="B-" type="passive"/>
+        <pin num="5" name="OUT+" type="passive"/>
+        <pin num="6" name="OUT-" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="parking_sensor">
+      <uri>${KIPRJMOD}/parking_sensor.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="U1" pin="6" pinfunction="3V3_6" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="VCC_1" pintype="passive"/>
+    </net>
+    <net code="2" name="BAT_N" class="Default">
+      <node ref="J1" pin="2" pinfunction="-_2" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="B-_4" pintype="passive"/>
+    </net>
+    <net code="3" name="BAT_P" class="Default">
+      <node ref="J1" pin="1" pinfunction="+_1" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="B+_3" pintype="passive"/>
+    </net>
+    <net code="4" name="GND" class="Default">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="GND_7" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="OUT-_6" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="GND_2" pintype="passive"/>
+    </net>
+    <net code="5" name="LED_A" class="Default">
+      <node ref="D1" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+    </net>
+    <net code="6" name="LED_DRV" class="Default">
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GPIO1_2" pintype="passive"/>
+    </net>
+    <net code="7" name="SCL" class="Default">
+      <node ref="U1" pin="12" pinfunction="GPIO9_12" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="SCL_3" pintype="passive"/>
+    </net>
+    <net code="8" name="SDA" class="Default">
+      <node ref="U1" pin="13" pinfunction="GPIO8_13" pintype="passive"/>
+      <node ref="U3" pin="4" pinfunction="SDA_4" pintype="passive"/>
+    </net>
+    <net code="9" name="SOLAR_N" class="Default">
+      <node ref="J2" pin="2" pinfunction="-_2" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="IN-_2" pintype="passive"/>
+    </net>
+    <net code="10" name="SOLAR_P" class="Default">
+      <node ref="J2" pin="1" pinfunction="+_1" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="IN+_1" pintype="passive"/>
+    </net>
+    <net code="11" name="VBAT_SENSE" class="Default">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="GPIO0_1" pintype="passive"/>
+    </net>
+    <net code="12" name="VOUT" class="Default">
+      <node ref="SW1" pin="1" pinfunction="A_1" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="OUT+_5" pintype="passive"/>
+    </net>
+    <net code="13" name="VSYS" class="Default">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="C_2" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="5V_8" pintype="passive"/>
+    </net>
+    <net code="14" name="unconnected-(SW1-B-Pad3)" class="Default">
+      <node ref="SW1" pin="3" pinfunction="B_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="15" name="unconnected-(U1-GPIO2-Pad3)" class="Default">
+      <node ref="U1" pin="3" pinfunction="GPIO2_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="16" name="unconnected-(U1-GPIO3-Pad4)" class="Default">
+      <node ref="U1" pin="4" pinfunction="GPIO3_4" pintype="passive+no_connect"/>
+    </net>
+    <net code="17" name="unconnected-(U1-GPIO4-Pad5)" class="Default">
+      <node ref="U1" pin="5" pinfunction="GPIO4_5" pintype="passive+no_connect"/>
+    </net>
+    <net code="18" name="unconnected-(U1-GPIO5-Pad16)" class="Default">
+      <node ref="U1" pin="16" pinfunction="GPIO5_16" pintype="passive+no_connect"/>
+    </net>
+    <net code="19" name="unconnected-(U1-GPIO6-Pad15)" class="Default">
+      <node ref="U1" pin="15" pinfunction="GPIO6_15" pintype="passive+no_connect"/>
+    </net>
+    <net code="20" name="unconnected-(U1-GPIO7-Pad14)" class="Default">
+      <node ref="U1" pin="14" pinfunction="GPIO7_14" pintype="passive+no_connect"/>
+    </net>
+    <net code="21" name="unconnected-(U1-GPIO10-Pad11)" class="Default">
+      <node ref="U1" pin="11" pinfunction="GPIO10_11" pintype="passive+no_connect"/>
+    </net>
+    <net code="22" name="unconnected-(U1-GPIO20-Pad10)" class="Default">
+      <node ref="U1" pin="10" pinfunction="GPIO20_10" pintype="passive+no_connect"/>
+    </net>
+    <net code="23" name="unconnected-(U1-GPIO21-Pad9)" class="Default">
+      <node ref="U1" pin="9" pinfunction="GPIO21_9" pintype="passive+no_connect"/>
+    </net>
+    <net code="24" name="unconnected-(U3-DRDY-Pad5)" class="Default">
+      <node ref="U3" pin="5" pinfunction="DRDY_5" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>

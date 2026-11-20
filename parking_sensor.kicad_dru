@@ -1,0 +1,7 @@
+(version 1)
+(rule "Power tracks >= 0.6mm"
+  (condition "A.Type == 'Track' && (A.NetName == 'SOLAR_P' || A.NetName == 'SOLAR_N' || A.NetName == 'BAT_P' || A.NetName == 'BAT_N' || A.NetName == 'VOUT' || A.NetName == 'VSYS' || A.NetName == '+3V3' || A.NetName == 'GND')")
+  (constraint track_width (min 0.6mm)))
+(rule "Signal tracks >= 0.25mm"
+  (condition "A.Type == 'Track'")
+  (constraint track_width (min 0.25mm)))

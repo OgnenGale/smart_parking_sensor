@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "parking_sensor")(type "KiCad")(uri "${KIPRJMOD}/parking_sensor.kicad_sym")(options "")(descr "Module symbols"))
+)
